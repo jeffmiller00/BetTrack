@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @source.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @source.website %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @source.twitter %>
+</p>
+
+<p>
+  <strong>Trust:</strong>
+  <%= @source.trust %>
+</p>
+
+<%= link_to 'Edit', edit_source_path(@source) %> |
+<%= link_to 'Back', sources_path %>
