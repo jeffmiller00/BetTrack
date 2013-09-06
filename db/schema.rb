@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906050246) do
+ActiveRecord::Schema.define(version: 20130906052540) do
 
   create_table "bet_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "bets", force: true do |t|
+    t.date     "date"
+    t.integer  "bet_type_id"
+    t.integer  "sport_id"
+    t.integer  "source_id"
+    t.string   "description"
+    t.float    "amount"
+    t.float    "spread"
+    t.boolean  "bet"
+    t.string   "won"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bets", ["bet_type_id"], name: "index_bets_on_bet_type_id", using: :btree
+  add_index "bets", ["source_id"], name: "index_bets_on_source_id", using: :btree
+  add_index "bets", ["sport_id"], name: "index_bets_on_sport_id", using: :btree
 
   create_table "sources", force: true do |t|
     t.string   "name"

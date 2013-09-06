@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-09-06
+  bet_type_id: 
+  sport_id: 
+  source_id: 
+  description: MyString
+  amount: 1.5
+  spread: 1.5
+  bet: false
+  won: MyString
+
+two:
+  date: 2013-09-06
+  bet_type_id: 
+  sport_id: 
+  source_id: 
+  description: MyString
+  amount: 1.5
+  spread: 1.5
+  bet: false
+  won: MyString

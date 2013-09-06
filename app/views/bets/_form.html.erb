@@ -1,0 +1,53 @@
+<%= form_for(@bet) do |f| %>
+  <% if @bet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bet.errors.count, "error") %> prohibited this bet from being saved:</h2>
+
+      <ul>
+      <% @bet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :bet_type %><br>
+    <%= f.text_field :bet_type %>
+  </div>
+  <div class="field">
+    <%= f.label :sport %><br>
+    <%= f.text_field :sport %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :spread %><br>
+    <%= f.text_field :spread %>
+  </div>
+  <div class="field">
+    <%= f.label :bet %><br>
+    <%= f.check_box :bet %>
+  </div>
+  <div class="field">
+    <%= f.label :won %><br>
+    <%= f.text_field :won %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

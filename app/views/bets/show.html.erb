@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @bet.date %>
+</p>
+
+<p>
+  <strong>Bet type:</strong>
+  <%= @bet.bet_type %>
+</p>
+
+<p>
+  <strong>Sport:</strong>
+  <%= @bet.sport %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @bet.source %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bet.description %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bet.amount %>
+</p>
+
+<p>
+  <strong>Spread:</strong>
+  <%= @bet.spread %>
+</p>
+
+<p>
+  <strong>Bet:</strong>
+  <%= @bet.bet %>
+</p>
+
+<p>
+  <strong>Won:</strong>
+  <%= @bet.won %>
+</p>
+
+<%= link_to 'Edit', edit_bet_path(@bet) %> |
+<%= link_to 'Back', bets_path %>
