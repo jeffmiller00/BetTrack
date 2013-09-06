@@ -1,4 +1,6 @@
 BetTrack::Application.routes.draw do
+  resources :sports
+
   resources :bet_types
 
   resources :sources
