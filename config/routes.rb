@@ -1,5 +1,9 @@
 BetTrack::Application.routes.draw do
+  resources :bet_types
+
   resources :sources
+  get 'init/sources' => 'sources#initialize'  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

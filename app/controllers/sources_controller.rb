@@ -61,6 +61,12 @@ class SourcesController < ApplicationController
     end
   end
 
+  def initialize
+    Source.initialize
+    #@sources = Source.all
+    #render action: 'index'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_source
