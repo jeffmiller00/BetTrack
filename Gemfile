@@ -44,3 +44,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'roo', :git => 'git://github.com/Empact/roo.git'
+gem 'rubyzip', '< 1.0.0'
+#gem 'spreadsheet'

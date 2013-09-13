@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+InputType.create(name: 'Loaded')
+InputType.create(name: 'Manual')
+
+BetResult.create(name: 'Win')
+BetResult.create(name: 'Loss')
+BetResult.create(name: 'Push')

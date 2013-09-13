@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906052540) do
+ActiveRecord::Schema.define(version: 20130913040935) do
+
+  create_table "bet_results", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bet_types", force: true do |t|
     t.string   "name"
@@ -27,15 +33,24 @@ ActiveRecord::Schema.define(version: 20130906052540) do
     t.string   "description"
     t.float    "amount"
     t.float    "spread"
-    t.boolean  "bet"
     t.string   "won"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "input_type_id"
+    t.integer  "bet_result_id"
   end
 
+  add_index "bets", ["bet_result_id"], name: "index_bets_on_bet_result_id", using: :btree
   add_index "bets", ["bet_type_id"], name: "index_bets_on_bet_type_id", using: :btree
+  add_index "bets", ["input_type_id"], name: "index_bets_on_input_type_id", using: :btree
   add_index "bets", ["source_id"], name: "index_bets_on_source_id", using: :btree
   add_index "bets", ["sport_id"], name: "index_bets_on_sport_id", using: :btree
+
+  create_table "input_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sources", force: true do |t|
     t.string   "name"
@@ -44,12 +59,14 @@ ActiveRecord::Schema.define(version: 20130906052540) do
     t.float    "trust"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "abbrev"
   end
 
   create_table "sports", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "abbrev"
   end
 
 end
