@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-InputType.create(name: 'Loaded')
-InputType.create(name: 'Manual')
+InputType.find_or_create_by(name: 'Loaded')
+InputType.find_or_create_by(name: 'Manual')
 
-BetResult.create(name: 'Win')
-BetResult.create(name: 'Loss')
-BetResult.create(name: 'Push')
+BetResult.find_or_create_by(name: 'Win')
+BetResult.find_or_create_by(name: 'Loss')
+BetResult.find_or_create_by(name: 'Push')

@@ -1,4 +1,5 @@
 BetTrack::Application.routes.draw do
+  get 'bets/finish' => 'bets#finish'
   resources :bets
 
   resources :sports

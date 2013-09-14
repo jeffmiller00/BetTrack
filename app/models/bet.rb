@@ -6,14 +6,12 @@ class Bet < ActiveRecord::Base
   belongs_to :source
   belongs_to :bet_result
 
+
   def self.load
     ex = Roo::Excelx.new("/home/user/local/src/BetTrack/db/Bets.xlsx")
     ex.default_sheet = ex.sheets.first
 
     input = InputType.find_by_name("Loaded").id
-
-    puts ex.last_row
-    return
 
     2.upto(ex.last_row) do |row_num|
       date  = ex.cell(row_num,1)
@@ -22,14 +20,13 @@ class Bet < ActiveRecord::Base
       desc = ex.cell(row_num,4)
       amount = ex.cell(row_num,5)
       spread = ex.cell(row_num,6)
-      won = ex.cell(row_num,7)
-      bet = ex.cell(row_num,8)
+      won = ex.cell(row_num,8)
 
-      if won == 'Win'
+      if won == 'TRUE'
         br = BetResult.find_by_name('Win')          
       elsif won == 'Push'
         br = BetResult.find_by_name('Push')
-      elsif won == "Loss"
+      elsif won == "FALSE"
         br = BetResult.find_by_name('Loss')
       end
 

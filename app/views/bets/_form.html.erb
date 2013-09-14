@@ -12,24 +12,28 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :id %><br>
+    <%= f.text_field :id, disabled: true %>
+  </div>
+  <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :bet_type %><br>
-    <%= f.text_field :bet_type %>
+    <%= f.label :bet_type_id %><br>
+    <%= collection_select(:bet, :bet_type_id, BetType.all, :id, :name, prompt: true) %>
   </div>
   <div class="field">
-    <%= f.label :sport %><br>
-    <%= f.text_field :sport %>
+    <%= f.label :bet_sport_id %><br>
+    <%= collection_select(:bet, :sport_id, Sport.all, :id, :abbrev, prompt: true) %>
   </div>
   <div class="field">
-    <%= f.label :source %><br>
-    <%= f.text_field :source %>
+    <%= f.label :bet_source_id %><br>
+    <%= collection_select(:bet, :source_id, Source.all, :id, :abbrev, prompt: true) %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
@@ -40,12 +44,12 @@
     <%= f.text_field :spread %>
   </div>
   <div class="field">
-    <%= f.label :bet %><br>
-    <%= f.check_box :bet %>
+    <%= f.label :bet_input_type_id %><br>
+    <%= collection_select(:bet, :input_type_id, InputType.all, :id, :name, prompt: true) %>
   </div>
   <div class="field">
-    <%= f.label :won %><br>
-    <%= f.text_field :won %>
+    <%= f.label :bet_bet_result_id %><br>
+    <%= collection_select(:bet, :bet_result_id, BetResult.all, :id, :name, prompt: true) %>
   </div>
   <div class="actions">
     <%= f.submit %>

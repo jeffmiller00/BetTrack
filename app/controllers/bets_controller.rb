@@ -61,6 +61,10 @@ class BetsController < ApplicationController
     end
   end
 
+  def finish
+    @bet = Bet.where(:bet_type_id => nil).order("RANDOM()").limit(1).first
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bet
